@@ -1,0 +1,165 @@
+.enquiry-cta {
+  width: 100%;
+
+  min-height: 75vh;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 100px 24px;
+
+  background:
+    radial-gradient(
+      circle at 50% 35%,
+      #fff8f5 0%,
+      #f5dfe1 45%,
+      #e7c9cd 100%
+    );
+
+  color: #4a3538;
+
+  text-align: center;
+}
+
+.enquiry-cta-content {
+  width: min(100%, 850px);
+}
+
+.enquiry-label {
+  display: block;
+
+  margin-bottom: 28px;
+
+  color: #9a6d76;
+
+  font-size: 0.65rem;
+
+  letter-spacing: 0.28em;
+}
+
+.enquiry-cta h2 {
+  margin: 0;
+
+  font-family: Georgia, "Times New Roman", serif;
+
+  font-size: clamp(3.2rem, 7vw, 7rem);
+
+  line-height: 0.95;
+
+  font-weight: 400;
+
+  letter-spacing: -0.04em;
+}
+
+.enquiry-cta h2 em {
+  font-weight: 400;
+}
+
+.enquiry-cta p {
+  width: min(100%, 520px);
+
+  margin: 32px auto 40px;
+
+  color: #70595e;
+
+  font-size: clamp(0.9rem, 1.2vw, 1rem);
+
+  line-height: 1.8;
+}
+
+.enquiry-button {
+  display: inline-flex;
+
+  align-items: center;
+  justify-content: center;
+
+  min-width: 200px;
+
+  padding: 16px 30px;
+
+  border-radius: 40px;
+
+  background: #7d3150;
+
+  color: #fff;
+
+  text-decoration: none;
+
+  font-size: 0.7rem;
+
+  letter-spacing: 0.18em;
+
+  text-transform: uppercase;
+
+  box-shadow: 0 12px 30px rgba(125, 49, 80, 0.18);
+
+  transition:
+    transform 0.3s ease,
+    background 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.enquiry-button:hover {
+  background: #66253f;
+
+  transform: translateY(-3px);
+
+  box-shadow: 0 16px 35px rgba(125, 49, 80, 0.25);
+}
+
+
+/* Tablet */
+
+@media (max-width: 768px) {
+
+  .enquiry-cta {
+    min-height: 65vh;
+
+    padding: 90px 24px;
+  }
+
+  .enquiry-cta h2 {
+    font-size: clamp(3rem, 11vw, 5rem);
+  }
+
+}
+
+
+/* Mobile */
+
+@media (max-width: 480px) {
+
+  .enquiry-cta {
+    min-height: auto;
+
+    padding: 90px 20px;
+  }
+
+  .enquiry-label {
+    font-size: 0.55rem;
+
+    letter-spacing: 0.17em;
+  }
+
+  .enquiry-cta h2 {
+    font-size: clamp(2.7rem, 13vw, 4rem);
+
+    line-height: 0.98;
+  }
+
+  .enquiry-cta p {
+    margin-top: 25px;
+
+    font-size: 0.88rem;
+
+    line-height: 1.7;
+  }
+
+  .enquiry-button {
+    width: 100%;
+
+    max-width: 280px;
+  }
+
+}

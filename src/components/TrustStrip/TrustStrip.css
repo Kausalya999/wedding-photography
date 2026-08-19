@@ -1,0 +1,66 @@
+.trust-strip {
+  width: 100%;
+
+  background: #fbf7f4;
+
+  border-top: 1px solid rgba(74, 53, 56, 0.08);
+  border-bottom: 1px solid rgba(74, 53, 56, 0.08);
+
+  padding: 15px 20px;
+}
+
+.trust-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+
+  text-align: center;
+
+  color: #80666a;
+
+  font-size: 0.65rem;
+  letter-spacing: 0.2em;
+  font-weight: 500;
+}
+
+.trust-dot {
+  color: #b46b7b;
+  font-size: 0.9rem;
+}
+
+
+/* Tablet */
+
+@media (max-width: 768px) {
+
+  .trust-strip {
+    padding: 14px 18px;
+  }
+
+  .trust-content {
+    gap: 10px;
+
+    font-size: 0.58rem;
+    letter-spacing: 0.13em;
+  }
+}
+
+
+/* Mobile */
+
+@media (max-width: 480px) {
+
+  .trust-strip {
+    padding: 13px 14px;
+  }
+
+  .trust-content {
+    gap: 7px;
+
+    font-size: 0.5rem;
+    letter-spacing: 0.09em;
+
+    white-space: nowrap;
+  }
+}

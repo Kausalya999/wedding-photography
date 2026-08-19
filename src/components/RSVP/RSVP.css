@@ -1,0 +1,323 @@
+.rsvp {
+  width: 100%;
+
+  padding: clamp(90px, 10vw, 150px) 24px;
+
+  background: #fbf7f4;
+
+  color: #4a3538;
+}
+
+
+/* Header */
+
+.rsvp-header {
+  width: min(100%, 850px);
+
+  margin: 0 auto 70px;
+
+  text-align: center;
+}
+
+.rsvp-label {
+  display: block;
+
+  margin-bottom: 25px;
+
+  color: #9a6d76;
+
+  font-size: 0.65rem;
+
+  letter-spacing: 0.25em;
+}
+
+.rsvp-header h2 {
+  margin: 0;
+
+  font-family: Georgia, "Times New Roman", serif;
+
+  font-size: clamp(3rem, 6vw, 6rem);
+
+  line-height: 0.96;
+
+  font-weight: 400;
+
+  letter-spacing: -0.04em;
+}
+
+.rsvp-header h2 em {
+  font-weight: 400;
+}
+
+.rsvp-header p {
+  max-width: 520px;
+
+  margin: 30px auto 0;
+
+  color: #756064;
+
+  font-size: 0.95rem;
+
+  line-height: 1.8;
+}
+
+
+/* Form */
+
+.rsvp-form {
+  width: min(100%, 900px);
+
+  margin: 0 auto;
+
+  padding: clamp(30px, 5vw, 65px);
+
+  background: #fffdfb;
+
+  border: 1px solid rgba(74, 53, 56, 0.12);
+
+  border-radius: 24px;
+
+  box-shadow:
+    0 20px 60px rgba(74, 53, 56, 0.05);
+}
+
+
+/* Rows */
+
+.rsvp-row {
+  display: grid;
+
+  grid-template-columns: 1fr 1fr;
+
+  gap: 28px;
+}
+
+
+/* Fields */
+
+.rsvp-field {
+  display: flex;
+
+  flex-direction: column;
+
+  margin-bottom: 30px;
+}
+
+.rsvp-field label {
+  margin-bottom: 10px;
+
+  color: #5e484d;
+
+  font-size: 0.68rem;
+
+  letter-spacing: 0.15em;
+
+  text-transform: uppercase;
+}
+
+.rsvp-field input,
+.rsvp-field textarea {
+  width: 100%;
+
+  box-sizing: border-box;
+
+  padding: 14px 2px;
+
+  border: none;
+
+  border-bottom: 1px solid #d8c5c8;
+
+  outline: none;
+
+  background: transparent;
+
+  color: #4a3538;
+
+  font-family: inherit;
+
+  font-size: 0.95rem;
+
+  transition:
+    border-color 0.3s ease,
+    padding-left 0.3s ease;
+}
+
+.rsvp-field input::placeholder,
+.rsvp-field textarea::placeholder {
+  color: #ad9b9f;
+}
+
+.rsvp-field input:focus,
+.rsvp-field textarea:focus {
+  border-bottom-color: #8d3c58;
+
+  padding-left: 6px;
+}
+
+.rsvp-field textarea {
+  resize: vertical;
+
+  min-height: 120px;
+
+  line-height: 1.7;
+}
+
+
+/* Submit */
+
+.rsvp-submit {
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  gap: 25px;
+
+  margin-top: 10px;
+}
+
+.rsvp-submit button {
+  min-width: 190px;
+
+  padding: 15px 28px;
+
+  border: none;
+
+  border-radius: 40px;
+
+  background: #7d3150;
+
+  color: #fff;
+
+  cursor: pointer;
+
+  font-family: inherit;
+
+  font-size: 0.7rem;
+
+  letter-spacing: 0.18em;
+
+  text-transform: uppercase;
+
+  transition:
+    transform 0.3s ease,
+    background 0.3s ease;
+}
+
+.rsvp-submit button:hover {
+  background: #66253f;
+
+  transform: translateY(-2px);
+}
+
+.rsvp-submit span {
+  color: #927b80;
+
+  font-size: 0.75rem;
+}
+
+
+/* Tablet */
+
+@media (max-width: 768px) {
+
+  .rsvp {
+    padding: 90px 20px;
+  }
+
+  .rsvp-header {
+    margin-bottom: 55px;
+  }
+
+  .rsvp-header h2 {
+    font-size: clamp(2.8rem, 10vw, 5rem);
+  }
+
+  .rsvp-form {
+    padding: 40px 30px;
+  }
+
+  .rsvp-row {
+    gap: 20px;
+  }
+
+}
+
+
+/* Mobile */
+
+@media (max-width: 600px) {
+
+  .rsvp {
+    padding: 80px 18px;
+  }
+
+  .rsvp-label {
+    font-size: 0.55rem;
+
+    letter-spacing: 0.16em;
+  }
+
+  .rsvp-header h2 {
+    font-size: clamp(2.6rem, 12vw, 4rem);
+  }
+
+  .rsvp-header p {
+    font-size: 0.88rem;
+
+    line-height: 1.7;
+  }
+
+  .rsvp-form {
+    padding: 35px 22px;
+
+    border-radius: 20px;
+  }
+
+  .rsvp-row {
+    grid-template-columns: 1fr;
+
+    gap: 0;
+  }
+
+  .rsvp-field {
+    margin-bottom: 25px;
+  }
+
+  .rsvp-submit {
+    flex-direction: column;
+
+    align-items: stretch;
+
+    gap: 15px;
+
+    margin-top: 5px;
+  }
+
+  .rsvp-submit button {
+    width: 100%;
+  }
+
+  .rsvp-submit span {
+    text-align: center;
+
+    line-height: 1.5;
+  }
+
+}
+
+
+/* Small mobile */
+
+@media (max-width: 380px) {
+
+  .rsvp {
+    padding-inline: 14px;
+  }
+
+  .rsvp-form {
+    padding: 30px 18px;
+  }
+
+}
