@@ -1,11 +1,16 @@
 import { motion } from "framer-motion";
+
+import testimonialImage from "../../assets/images/testimonials/gallery1.png";
+
 import "./Testimonials.css";
 
 function Testimonials() {
   return (
     <section className="testimonials">
 
+      {/* Heading */}
       <div className="testimonials-heading">
+
         <motion.span
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -25,10 +30,14 @@ function Testimonials() {
           <br />
           <em>beautiful celebrations.</em>
         </motion.h2>
+
       </div>
 
+
+      {/* Testimonial */}
       <div className="testimonial-card">
 
+        {/* Image */}
         <motion.div
           className="testimonial-image"
           initial={{ opacity: 0, x: -40 }}
@@ -37,21 +46,28 @@ function Testimonials() {
           transition={{ duration: 0.9 }}
         >
           <img
-            src="src/assets/images/testimonials/gallery1.png"
-            alt="Wedding couple"
+            src={testimonialImage}
+            alt="Ananya and Rahul wedding"
           />
         </motion.div>
 
+
+        {/* Content */}
         <motion.div
           className="testimonial-content"
           initial={{ opacity: 0, x: 40 }}
           whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true, amount: 0.2 }}
-          transition={{ duration: 0.9, delay: 0.1 }}
+          transition={{
+            duration: 0.9,
+            delay: 0.1
+          }}
         >
+
           <div className="testimonial-stars">
             ★ ★ ★ ★ ★
           </div>
+
 
           <blockquote>
             “They captured the moments we didn't even
@@ -60,24 +76,45 @@ function Testimonials() {
             all over again.”
           </blockquote>
 
+
           <div className="testimonial-author">
-            <strong>Ananya & Rahul</strong>
-            <span>Bangalore · 2026</span>
+
+            <strong>
+              Ananya & Rahul
+            </strong>
+
+            <span>
+              Bangalore · 2026
+            </span>
+
           </div>
+
         </motion.div>
 
       </div>
 
+
+      {/* Navigation */}
       <div className="testimonial-navigation">
-        <button aria-label="Previous testimonial">
+
+        <button
+          type="button"
+          aria-label="Previous testimonial"
+        >
           ←
         </button>
 
-        <span>01 / 03</span>
+        <span>
+          01 / 03
+        </span>
 
-        <button aria-label="Next testimonial">
+        <button
+          type="button"
+          aria-label="Next testimonial"
+        >
           →
         </button>
+
       </div>
 
     </section>
