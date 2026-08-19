@@ -4,17 +4,20 @@ import Home from "./pages/Home";
 import Stories from "./pages/Stories";
 import StoryDetails from "./pages/StoryDetails";
 import Portfolio from "./pages/Portfolio";
- import About from "./pages/About";
+import About from "./pages/About";
 import Contact from "./pages/Contact";
 
 function App() {
   return (
-    <BrowserRouter>
+    <BrowserRouter basename={import.meta.env.BASE_URL}>
       <Routes>
 
         <Route path="/" element={<Home />} />
 
-        <Route path="/stories" element={<Stories />} />
+        <Route
+          path="/stories"
+          element={<Stories />}
+        />
 
         <Route
           path="/stories/:slug"

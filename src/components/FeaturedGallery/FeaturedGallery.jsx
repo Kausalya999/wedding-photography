@@ -1,10 +1,15 @@
 import { motion } from "framer-motion";
+
+import gallery1 from "../../assets/images/gallery1.png";
+import gallery2 from "../../assets/images/gallery2.png";
+
 import "./FeaturedGallery.css";
 
 function FeaturedGallery() {
   return (
     <section className="featured-gallery" id="gallery">
 
+      {/* Header */}
       <div className="featured-gallery-header">
 
         <motion.span
@@ -19,7 +24,7 @@ function FeaturedGallery() {
 
         <motion.h2
           initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8 }}
         >
@@ -30,7 +35,7 @@ function FeaturedGallery() {
 
         <motion.p
           initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.7, delay: 0.2 }}
         >
@@ -41,8 +46,10 @@ function FeaturedGallery() {
       </div>
 
 
+      {/* Gallery */}
       <div className="featured-gallery-grid">
 
+        {/* Image 1 */}
         <motion.div
           className="gallery-item gallery-item-large"
           initial={{ opacity: 0, y: 40 }}
@@ -51,7 +58,7 @@ function FeaturedGallery() {
           transition={{ duration: 0.8 }}
         >
           <img
-            src="/src/assets/images/gallery1.png"
+            src={gallery1}
             alt="Wedding couple"
           />
 
@@ -62,17 +69,22 @@ function FeaturedGallery() {
         </motion.div>
 
 
+        {/* Middle Column */}
         <div className="gallery-column">
 
+          {/* Image 2 */}
           <motion.div
             className="gallery-item gallery-item-small"
             initial={{ opacity: 0, y: 40 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.8, delay: 0.1 }}
+            transition={{
+              duration: 0.8,
+              delay: 0.1
+            }}
           >
             <img
-              src="/src/assets/images/gallery2.png"
+              src={gallery2}
               alt="Bride walking during wedding"
             />
 
@@ -83,15 +95,19 @@ function FeaturedGallery() {
           </motion.div>
 
 
+          {/* Image 3 */}
           <motion.div
             className="gallery-item gallery-item-small"
             initial={{ opacity: 0, y: 40 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.8, delay: 0.2 }}
+            transition={{
+              duration: 0.8,
+              delay: 0.2
+            }}
           >
             <img
-              src="/src/assets/images/gallery1.png"
+              src={gallery1}
               alt="Wedding celebration"
             />
 
@@ -104,15 +120,19 @@ function FeaturedGallery() {
         </div>
 
 
+        {/* Image 4 */}
         <motion.div
           className="gallery-item gallery-item-large gallery-item-right"
           initial={{ opacity: 0, y: 40 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.8, delay: 0.15 }}
+          viewport={{ once: true, amount: 0.2 }}
+          transition={{
+            duration: 0.8,
+            delay: 0.15
+          }}
         >
           <img
-            src="/src/assets/images/gallery2.png"
+            src={gallery2}
             alt="Bride and groom"
           />
 
@@ -125,6 +145,7 @@ function FeaturedGallery() {
       </div>
 
 
+      {/* View All Stories */}
       <motion.div
         className="gallery-button-wrapper"
         initial={{ opacity: 0, y: 20 }}
@@ -132,7 +153,10 @@ function FeaturedGallery() {
         viewport={{ once: true }}
         transition={{ duration: 0.7 }}
       >
-        <a href="/gallery" className="gallery-button">
+        <a
+          href="/portfolio"
+          className="gallery-button"
+        >
           View All Stories
         </a>
       </motion.div>
