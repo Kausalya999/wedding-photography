@@ -1,45 +1,108 @@
+import { useState } from "react";
+import { Link } from "react-router-dom";
+
 import "./Navbar.css";
 
 function Navbar() {
+
+  const [menuOpen, setMenuOpen] = useState(false);
+
+  const closeMenu = () => {
+    setMenuOpen(false);
+  };
+
   return (
     <header className="navbar">
+
       <div className="navbar-container">
 
         {/* Logo */}
-        <div className="navbar-logo">
+
+        <Link
+          to="/"
+          className="navbar-logo"
+          onClick={closeMenu}
+        >
+
           <span className="navbar-logo-main">
-            ARK Studios
+            ARK
           </span>
 
-          {/* <span className="navbar-logo-sub">
-            Studios
-          </span> */}
-        </div>
+          <span className="navbar-logo-sub">
+            Studio
+          </span>
+
+        </Link>
+
 
         {/* Desktop Navigation */}
-        <nav className="navbar-links">
-         <a href="#home">HOME</a>
 
-<a href="#about">ABOUT</a>
+        <nav
+          className={`navbar-links ${
+            menuOpen ? "navbar-links-open" : ""
+          }`}
+        >
 
-<a href="#gallery">GALLERY</a>
+          <Link
+            to="/"
+            onClick={closeMenu}
+          >
+            HOME
+          </Link>
 
-<a href="#contact">CONTACT</a>
+          <Link
+            to="/about"
+            onClick={closeMenu}
+          >
+            ABOUT
+          </Link>
 
+          <Link
+            to="/gallery"
+            onClick={closeMenu}
+          >
+            GALLERY
+          </Link>
+
+          <Link
+            to="/contact"
+            onClick={closeMenu}
+          >
+            CONTACT
+          </Link>
 
         </nav>
 
+
         {/* RSVP */}
-        <a href="#rsvp" className="navbar-rsvp">
+
+        <Link
+          to="/contact"
+          className="navbar-rsvp"
+          onClick={closeMenu}
+        >
           RSVP
-        </a>
+        </Link>
+
 
         {/* Mobile Menu Button */}
-        <button className="navbar-menu-button" aria-label="Open menu">
-          ☰
+
+        <button
+          type="button"
+          className="navbar-menu-button"
+          aria-label={
+            menuOpen
+              ? "Close menu"
+              : "Open menu"
+          }
+          aria-expanded={menuOpen}
+          onClick={() => setMenuOpen(!menuOpen)}
+        >
+          {menuOpen ? "×" : "☰"}
         </button>
 
       </div>
+
     </header>
   );
 }
