@@ -3,10 +3,20 @@
 
   background: #fbf7f4;
 
- padding: clamp(80px, 8vw, 110px) 24px 70px;
+  padding:
+    clamp(27px, 5vw, 110px)
+    24px
+    clamp(90px, 10vw, 150px);
 
   color: #3f2c30;
+
+  overflow: hidden;
 }
+
+
+/* =================================
+   INTRODUCTION
+================================= */
 
 .story-intro-content {
   width: min(100%, 1100px);
@@ -16,8 +26,6 @@
   text-align: center;
 }
 
-
-/* Small heading */
 
 .story-intro-label {
   display: inline-block;
@@ -34,14 +42,16 @@
 }
 
 
-/* Main heading */
-
 .story-intro-content h2 {
   margin: 0;
 
-  font-family: Georgia, "Times New Roman", serif;
+  font-family:
+    Georgia,
+    "Times New Roman",
+    serif;
 
-  font-size: clamp(3rem, 6vw, 6.5rem);
+  font-size:
+    clamp(3rem, 6vw, 6.5rem);
 
   line-height: 0.95;
 
@@ -52,19 +62,19 @@
   color: #3f2c30;
 }
 
+
 .story-intro-content h2 em {
   font-weight: 400;
 }
 
 
-/* Description */
-
-.story-intro-content p {
+.story-intro-content > p {
   width: min(100%, 570px);
 
   margin: 38px auto 0;
 
-  font-size: clamp(0.9rem, 1.2vw, 1.05rem);
+  font-size:
+    clamp(0.9rem, 1.2vw, 1.05rem);
 
   line-height: 1.8;
 
@@ -74,59 +84,451 @@
 }
 
 
-/* Tablet */
+/* =================================
+   CLIENT PROFILE
+================================= */
 
-@media (max-width: 768px) {
+.story-profile {
 
-  .story-introduction {
-    padding: 100px 24px;
-  }
+  width: min(
+    100%,
+    1100px
+  );
 
-  .story-intro-label {
-    margin-bottom: 25px;
+  margin:
+    clamp(80px, 10vw, 140px)
+    auto
+    0;
 
-    font-size: 0.6rem;
+  display: grid;
 
-    letter-spacing: 0.2em;
-  }
+  grid-template-columns:
+    minmax(280px, 0.9fr)
+    minmax(320px, 1.1fr);
 
-  .story-intro-content h2 {
-    font-size: clamp(2.8rem, 10vw, 5rem);
+  gap:
+    clamp(45px, 8vw, 110px);
 
-    line-height: 0.98;
-  }
-
-  .story-intro-content p {
-    margin-top: 30px;
-
-    line-height: 1.75;
-  }
+  align-items: center;
 }
 
 
-/* Small mobile */
+/* =================================
+   CLIENT IMAGE
+================================= */
 
-@media (max-width: 480px) {
+.story-profile-image {
+
+  width: 100%;
+
+  max-width: 480px;
+
+  justify-self: center;
+
+  overflow: hidden;
+
+  position: relative;
+}
+
+
+.story-profile-image::after {
+
+  content: "";
+
+  position: absolute;
+
+  inset: 14px;
+
+  border: 1px solid
+    rgba(255, 255, 255, 0.45);
+
+  pointer-events: none;
+}
+
+
+.story-profile-image img {
+
+  display: block;
+
+  width: 100%;
+
+  aspect-ratio: 4 / 5;
+
+  object-fit: cover;
+
+  object-position: center;
+
+  transition:
+    transform 0.8s
+    cubic-bezier(0.2, 0.65, 0.3, 1);
+}
+
+
+.story-profile-image:hover img {
+
+  transform: scale(1.03);
+}
+
+
+/* =================================
+   PROFILE CONTENT
+================================= */
+
+.story-profile-content {
+
+  max-width: 500px;
+}
+
+
+.story-profile-label {
+
+  display: block;
+
+  margin-bottom: 20px;
+
+  font-size: 0.62rem;
+
+  letter-spacing: 0.28em;
+
+  color: #9a6d76;
+
+  font-weight: 500;
+}
+
+
+.story-profile-content h3 {
+
+  margin: 0;
+
+  font-family:
+    Georgia,
+    "Times New Roman",
+    serif;
+
+  font-size:
+    clamp(2.5rem, 4vw, 4.5rem);
+
+  line-height: 0.95;
+
+  font-weight: 400;
+
+  letter-spacing: -0.035em;
+
+  color: #3f2c30;
+}
+
+
+.story-profile-role {
+
+  display: block;
+
+  margin-top: 18px;
+
+  font-size: 0.62rem;
+
+  letter-spacing: 0.2em;
+
+  color: #9a6d76;
+}
+
+
+.story-profile-bio {
+
+  margin:
+    34px
+    0
+    20px;
+
+  font-family:
+    Georgia,
+    "Times New Roman",
+    serif;
+
+  font-size:
+    clamp(1.15rem, 1.8vw, 1.4rem);
+
+  line-height: 1.6;
+
+  color: #4f393e;
+}
+
+
+.story-profile-description {
+
+  margin: 0 0 18px;
+
+  font-size:
+    clamp(0.9rem, 1.1vw, 1rem);
+
+  line-height: 1.85;
+
+  letter-spacing: 0.01em;
+
+  color: #756064;
+}
+
+
+/* =================================
+   SIGNATURE
+================================= */
+
+.story-profile-signature {
+
+  margin-top: 32px;
+
+  font-family:
+    "Brush Script MT",
+    "Segoe Script",
+    cursive;
+
+  font-size: 2.2rem;
+
+  color: #9a6d76;
+}
+
+
+/* =================================
+   TABLET
+================================= */
+
+@media (max-width: 900px) {
 
   .story-introduction {
-    padding: 80px 20px;
+
+    padding:
+      50px
+      24px
+      110px;
   }
+
+
+  .story-profile {
+
+    grid-template-columns:
+      minmax(240px, 0.9fr)
+      minmax(280px, 1.1fr);
+
+    gap: 45px;
+  }
+
+
+  .story-profile-image {
+
+    max-width: 400px;
+  }
+
+
+  .story-profile-content h3 {
+
+    font-size:
+      clamp(2.5rem, 7vw, 4rem);
+  }
+
+}
+
+
+/* =================================
+   MOBILE
+================================= */
+
+@media (max-width: 700px) {
+
+  .story-introduction {
+
+    padding:
+      50px
+      20px
+      90px;
+  }
+
 
   .story-intro-label {
+
+    margin-bottom: 22px;
+
     font-size: 0.55rem;
 
-    letter-spacing: 0.15em;
+    letter-spacing: 0.18em;
   }
 
+
   .story-intro-content h2 {
-    font-size: clamp(2.5rem, 12vw, 4rem);
+
+    font-size:
+      clamp(2.6rem, 12vw, 4.5rem);
+
+    line-height: 0.98;
 
     letter-spacing: -0.03em;
   }
 
-  .story-intro-content p {
+
+  .story-intro-content > p {
+
+    margin-top: 28px;
+
+    font-size: 0.9rem;
+
+    line-height: 1.75;
+  }
+
+
+  /* Profile becomes vertical */
+
+  .story-profile {
+
+    margin-top: 80px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 45px;
+
+    align-items: stretch;
+  }
+
+
+  .story-profile-image {
+
+    width: min(
+      100%,
+      380px
+    );
+
+    margin: 0 auto;
+  }
+
+
+  .story-profile-image::after {
+
+    inset: 10px;
+  }
+
+
+  .story-profile-content {
+
+    width: 100%;
+
+    max-width: none;
+
+    text-align: center;
+  }
+
+
+  .story-profile-label {
+
+    font-size: 0.55rem;
+
+    letter-spacing: 0.18em;
+
+    margin-bottom: 18px;
+  }
+
+
+  .story-profile-content h3 {
+
+    font-size:
+      clamp(2.5rem, 13vw, 4rem);
+
+    line-height: 0.98;
+  }
+
+
+  .story-profile-role {
+
+    margin-top: 15px;
+
+    font-size: 0.55rem;
+
+    letter-spacing: 0.15em;
+
+    line-height: 1.6;
+  }
+
+
+  .story-profile-bio {
+
+    margin-top: 28px;
+
+    font-size: 1.05rem;
+
+    line-height: 1.65;
+  }
+
+
+  .story-profile-description {
+
     font-size: 0.88rem;
+
+    line-height: 1.75;
+  }
+
+
+  .story-profile-signature {
+
+    margin-top: 26px;
+
+    font-size: 2rem;
+  }
+
+}
+
+
+/* =================================
+   SMALL MOBILE
+================================= */
+
+@media (max-width: 400px) {
+
+  .story-introduction {
+
+    padding:
+      50px
+      18px
+      80px;
+  }
+
+
+  .story-intro-content h2 {
+
+    font-size:
+      clamp(2.4rem, 13vw, 3.5rem);
+  }
+
+
+  .story-intro-content > p {
+
+    font-size: 0.86rem;
 
     line-height: 1.7;
   }
+
+
+  .story-profile {
+
+    margin-top: 65px;
+
+    gap: 38px;
+  }
+
+
+  .story-profile-image {
+
+    width: 88%;
+  }
+
+
+  .story-profile-content h3 {
+
+    font-size:
+      clamp(2.3rem, 13vw, 3.3rem);
+  }
+
+
+  .story-profile-description {
+
+    font-size: 0.84rem;
+  }
+
 }

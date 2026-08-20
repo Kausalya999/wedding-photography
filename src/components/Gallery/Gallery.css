@@ -11,7 +11,7 @@
 
 .gallery-hero {
   min-height: 72vh;
-  padding: 160px 24px 100px;
+  padding: 46px 24px 100px;
 
   display: flex;
   flex-direction: column;
@@ -99,11 +99,6 @@
   border-color: #432f34;
 }
 
-
-/* ================================
-   MASONRY
-================================ */
-
 .gallery-masonry {
   width: min(1400px, calc(100% - 48px));
 
@@ -113,15 +108,8 @@
   column-gap: 22px;
 }
 
-
-/* ================================
-   GALLERY CARD
-================================ */
-
 .gallery-card {
   position: relative;
-
-  display: block;
 
   width: 100%;
 
@@ -149,11 +137,56 @@
     filter 0.6s ease;
 }
 
+
+/* =========================
+   NATURAL MASONRY SIZES
+========================= */
+
+.gallery-tall img {
+  aspect-ratio: 3 / 5;
+}
+
+.gallery-portrait img {
+  aspect-ratio: 4 / 5;
+}
+
+.gallery-wide img {
+  aspect-ratio: 5 / 4;
+}
+
+.gallery-small img {
+  aspect-ratio: 4 / 3;
+}
 .gallery-card:hover img {
   transform: scale(1.04);
   filter: brightness(0.78);
 }
 
+/* Different Pinterest-style proportions */
+/* 
+.gallery-card-0 img {
+  aspect-ratio: 4 / 5;
+}
+
+.gallery-card-1 img {
+  aspect-ratio: 3 / 4;
+}
+
+.gallery-card-2 img {
+  aspect-ratio: 4 / 6;
+}
+
+.gallery-card-3 img {
+  aspect-ratio: 5 / 4;
+}
+
+.gallery-card-4 img {
+  aspect-ratio: 3 / 5;
+}
+
+.gallery-card-5 img {
+  aspect-ratio: 4 / 5;
+} */
 
 /* ================================
    OVERLAY
@@ -274,10 +307,6 @@
 }
 
 
-/* ================================
-   MOBILE
-================================ */
-
 @media (max-width: 600px) {
 
   .gallery-hero {
@@ -291,30 +320,20 @@
 
   .gallery-hero-label {
     font-size: 9px;
-
     letter-spacing: 3px;
-
     margin-bottom: 20px;
   }
 
   .gallery-hero h1 {
-    font-size: clamp(
-      46px,
-      14vw,
-      72px
-    );
-
+    font-size: clamp(46px, 14vw, 72px);
     line-height: 0.94;
   }
 
   .gallery-hero p {
     margin-top: 28px;
-
     font-size: 14px;
-
     line-height: 1.7;
   }
-
 
   .gallery-filters {
     gap: 8px;
@@ -331,26 +350,77 @@
       15px;
 
     font-size: 9px;
-
     letter-spacing: 1.5px;
   }
 
 
+  /* =========================
+     MOBILE MASONRY
+  ========================= */
+
   .gallery-masonry {
-    width: calc(100% - 24px);
+
+    width: calc(100% - 20px);
+
+    margin: 0 auto;
 
     column-count: 2;
 
-    column-gap: 10px;
+    column-gap: 8px;
   }
+
 
   .gallery-card {
-    margin-bottom: 10px;
+
+    width: 100%;
+
+    margin-bottom: 8px;
+
+    break-inside: avoid;
+
+    overflow: hidden;
   }
 
 
-  /* Keep mobile lightweight */
+  .gallery-card img {
+
+    display: block;
+
+    width: 100%;
+
+    height: auto;
+
+    object-fit: cover;
+  }
+
+
+  /* =========================
+     DIFFERENT PHOTO HEIGHTS
+  ========================= */
+
+  .gallery-tall img {
+    aspect-ratio: 3 / 5;
+  }
+
+  .gallery-portrait img {
+    aspect-ratio: 4 / 5;
+  }
+
+  .gallery-wide img {
+    aspect-ratio: 5 / 4;
+  }
+
+  .gallery-small img {
+    aspect-ratio: 4 / 3;
+  }
+
+
+  /* =========================
+     MOBILE OVERLAY
+  ========================= */
+
   .gallery-card-overlay {
+
     padding: 14px;
 
     opacity: 1;
@@ -364,28 +434,34 @@
   }
 
   .gallery-card-overlay span {
+
     font-size: 7px;
 
     letter-spacing: 2px;
   }
 
   .gallery-card-overlay h2 {
+
     font-size: 15px;
   }
 
 
   .gallery-bottom {
-    padding: 100px 20px;
+
+    padding:
+      100px
+      20px;
   }
 
   .gallery-bottom span {
+
     font-size: 8px;
 
     letter-spacing: 3px;
   }
 
   .gallery-bottom h2 {
+
     font-size: 50px;
   }
-
 }

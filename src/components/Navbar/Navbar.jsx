@@ -8,12 +8,12 @@ function Navbar() {
         {/* Logo */}
         <div className="navbar-logo">
           <span className="navbar-logo-main">
-            Wedding
+            ARK Studios
           </span>
 
-          <span className="navbar-logo-sub">
-            PHOTOGRAPHY
-          </span>
+          {/* <span className="navbar-logo-sub">
+            Studios
+          </span> */}
         </div>
 
         {/* Desktop Navigation */}

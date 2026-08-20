@@ -7,7 +7,8 @@ import Portfolio from "./pages/Portfolio";
 import About from "./pages/About";
 import Contact from "./pages/Contact";
 import Gallery from "./pages/Gallery";
-
+import StoryIntroduction from "./components/StoryIntroduction/StoryIntroduction";
+import FeaturedGallery from "./components/FeaturedGallery/FeaturedGallery";
 function App() {
   return (
     <BrowserRouter basename={import.meta.env.BASE_URL}>
@@ -32,7 +33,7 @@ function App() {
 
         <Route
           path="/about"
-          element={<About />}
+          element={<StoryIntroduction />}
         />
 
         <Route
@@ -41,6 +42,11 @@ function App() {
         />
         <Route
           path="/gallery"
+          element={<FeaturedGallery />}
+/>
+
+ <Route
+          path="/images"
           element={<Gallery />}
 />
 

@@ -153,7 +153,7 @@ function FeaturedGallery() {
         viewport={{ once: true }}
         transition={{ duration: 0.7 }}
       >
-        <Link to="/gallery"
+        <Link to="/images"
           className="gallery-button"
         >
           View All Stories
