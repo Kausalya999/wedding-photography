@@ -1,0 +1,391 @@
+.gallery-page {
+  min-height: 100vh;
+  background: var(--cream, #f8f1ed);
+  color: #432f34;
+}
+
+
+/* ================================
+   HERO
+================================ */
+
+.gallery-hero {
+  min-height: 72vh;
+  padding: 160px 24px 100px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  text-align: center;
+}
+
+.gallery-hero-label {
+  margin-bottom: 24px;
+
+  font-size: 11px;
+  letter-spacing: 5px;
+  font-weight: 500;
+}
+
+.gallery-hero h1 {
+  margin: 0;
+
+  font-family: Georgia, serif;
+  font-size: clamp(54px, 8vw, 120px);
+  font-weight: 400;
+  line-height: 0.92;
+}
+
+.gallery-hero h1 em {
+  font-style: italic;
+}
+
+.gallery-hero p {
+  margin-top: 38px;
+
+  max-width: 600px;
+
+  font-size: clamp(15px, 1.5vw, 18px);
+  line-height: 1.8;
+  letter-spacing: 1px;
+}
+
+
+/* ================================
+   FILTERS
+================================ */
+
+.gallery-filters {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  gap: 12px;
+
+  padding: 0 24px 70px;
+
+  flex-wrap: wrap;
+}
+
+.gallery-filter {
+  border: 1px solid rgba(67, 47, 52, 0.35);
+
+  background: transparent;
+
+  padding: 11px 22px;
+
+  font-family: inherit;
+  font-size: 11px;
+
+  letter-spacing: 2px;
+  text-transform: uppercase;
+
+  color: #432f34;
+
+  cursor: pointer;
+
+  transition:
+    background 0.3s ease,
+    color 0.3s ease,
+    border-color 0.3s ease;
+}
+
+.gallery-filter:hover,
+.gallery-filter.active {
+  background: #432f34;
+  color: #fff;
+  border-color: #432f34;
+}
+
+
+/* ================================
+   MASONRY
+================================ */
+
+.gallery-masonry {
+  width: min(1400px, calc(100% - 48px));
+
+  margin: 0 auto;
+
+  column-count: 3;
+  column-gap: 22px;
+}
+
+
+/* ================================
+   GALLERY CARD
+================================ */
+
+.gallery-card {
+  position: relative;
+
+  display: block;
+
+  width: 100%;
+
+  margin-bottom: 22px;
+
+  break-inside: avoid;
+
+  overflow: hidden;
+
+  cursor: pointer;
+
+  background: #e9ded8;
+}
+
+.gallery-card img {
+  display: block;
+
+  width: 100%;
+  height: auto;
+
+  object-fit: cover;
+
+  transition:
+    transform 0.8s cubic-bezier(0.2, 0.65, 0.3, 1),
+    filter 0.6s ease;
+}
+
+.gallery-card:hover img {
+  transform: scale(1.04);
+  filter: brightness(0.78);
+}
+
+
+/* ================================
+   OVERLAY
+================================ */
+
+.gallery-card-overlay {
+  position: absolute;
+
+  inset: 0;
+
+  display: flex;
+
+  flex-direction: column;
+
+  justify-content: flex-end;
+
+  padding: 28px;
+
+  opacity: 0;
+
+  background:
+    linear-gradient(
+      to top,
+      rgba(30, 20, 23, 0.7),
+      transparent 55%
+    );
+
+  color: white;
+
+  transition: opacity 0.4s ease;
+}
+
+.gallery-card:hover .gallery-card-overlay {
+  opacity: 1;
+}
+
+.gallery-card-overlay span {
+  font-size: 10px;
+
+  letter-spacing: 3px;
+
+  text-transform: uppercase;
+
+  margin-bottom: 8px;
+}
+
+.gallery-card-overlay h2 {
+  margin: 0;
+
+  font-family: Georgia, serif;
+
+  font-size: 25px;
+
+  font-weight: 400;
+}
+
+
+/* ================================
+   BOTTOM
+================================ */
+
+.gallery-bottom {
+  padding: 160px 24px;
+
+  text-align: center;
+}
+
+.gallery-bottom span {
+  font-size: 10px;
+
+  letter-spacing: 5px;
+}
+
+.gallery-bottom h2 {
+  margin-top: 25px;
+
+  font-family: Georgia, serif;
+
+  font-size: clamp(50px, 7vw, 100px);
+
+  font-weight: 400;
+
+  line-height: 0.95;
+}
+
+.gallery-bottom h2 em {
+  font-style: italic;
+}
+
+
+/* ================================
+   TABLET
+================================ */
+
+@media (max-width: 900px) {
+
+  .gallery-hero {
+    min-height: 65vh;
+
+    padding-top: 130px;
+  }
+
+  .gallery-masonry {
+    column-count: 2;
+
+    width: min(
+      100% - 32px,
+      760px
+    );
+
+    column-gap: 16px;
+  }
+
+  .gallery-card {
+    margin-bottom: 16px;
+  }
+
+}
+
+
+/* ================================
+   MOBILE
+================================ */
+
+@media (max-width: 600px) {
+
+  .gallery-hero {
+    min-height: 60vh;
+
+    padding:
+      120px
+      20px
+      70px;
+  }
+
+  .gallery-hero-label {
+    font-size: 9px;
+
+    letter-spacing: 3px;
+
+    margin-bottom: 20px;
+  }
+
+  .gallery-hero h1 {
+    font-size: clamp(
+      46px,
+      14vw,
+      72px
+    );
+
+    line-height: 0.94;
+  }
+
+  .gallery-hero p {
+    margin-top: 28px;
+
+    font-size: 14px;
+
+    line-height: 1.7;
+  }
+
+
+  .gallery-filters {
+    gap: 8px;
+
+    padding:
+      0
+      16px
+      45px;
+  }
+
+  .gallery-filter {
+    padding:
+      9px
+      15px;
+
+    font-size: 9px;
+
+    letter-spacing: 1.5px;
+  }
+
+
+  .gallery-masonry {
+    width: calc(100% - 24px);
+
+    column-count: 2;
+
+    column-gap: 10px;
+  }
+
+  .gallery-card {
+    margin-bottom: 10px;
+  }
+
+
+  /* Keep mobile lightweight */
+  .gallery-card-overlay {
+    padding: 14px;
+
+    opacity: 1;
+
+    background:
+      linear-gradient(
+        to top,
+        rgba(30, 20, 23, 0.55),
+        transparent 65%
+      );
+  }
+
+  .gallery-card-overlay span {
+    font-size: 7px;
+
+    letter-spacing: 2px;
+  }
+
+  .gallery-card-overlay h2 {
+    font-size: 15px;
+  }
+
+
+  .gallery-bottom {
+    padding: 100px 20px;
+  }
+
+  .gallery-bottom span {
+    font-size: 8px;
+
+    letter-spacing: 3px;
+  }
+
+  .gallery-bottom h2 {
+    font-size: 50px;
+  }
+
+}

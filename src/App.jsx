@@ -6,6 +6,7 @@ import StoryDetails from "./pages/StoryDetails";
 import Portfolio from "./pages/Portfolio";
 import About from "./pages/About";
 import Contact from "./pages/Contact";
+import Gallery from "./pages/Gallery";
 
 function App() {
   return (
@@ -38,6 +39,10 @@ function App() {
           path="/contact"
           element={<Contact />}
         />
+        <Route
+          path="/gallery"
+          element={<Gallery />}
+/>
 
       </Routes>
     </BrowserRouter>

@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-
+import { Link } from "react-router-dom";
 import gallery1 from "../../assets/images/gallery1.png";
 import gallery2 from "../../assets/images/gallery2.png";
 
@@ -153,12 +153,11 @@ function FeaturedGallery() {
         viewport={{ once: true }}
         transition={{ duration: 0.7 }}
       >
-        <a
-          href="/portfolio"
+        <Link to="/gallery"
           className="gallery-button"
         >
           View All Stories
-        </a>
+        </Link>
       </motion.div>
 
     </section>
