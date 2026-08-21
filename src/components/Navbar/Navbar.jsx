@@ -4,45 +4,47 @@ import { Link } from "react-router-dom";
 import "./Navbar.css";
 
 function Navbar() {
-  const [galleryOpen, setGalleryOpen] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
+  const [galleryOpen, setGalleryOpen] = useState(false);
 
   const closeMenu = () => {
     setMenuOpen(false);
     setGalleryOpen(false);
   };
 
+  const toggleMenu = () => {
+    setMenuOpen((prev) => !prev);
+  };
+
+  const toggleGallery = () => {
+    setGalleryOpen((prev) => !prev);
+  };
+
   return (
-    <header className="navbar">
+    <header className={`navbar ${menuOpen ? "navbar-open" : ""}`}>
 
       <div className="navbar-container">
 
-        {/* Logo */}
+        {/* =========================
+            LOGO
+        ========================== */}
 
         <Link
           to="/"
           className="navbar-logo"
           onClick={closeMenu}
         >
-
           <span className="navbar-logo-main">
             ARK Studio
           </span>
-
-          {/* <span className="navbar-logo-sub">
-            Studio
-          </span> */}
-
         </Link>
 
 
-        {/* Desktop Navigation */}
+        {/* =========================
+            DESKTOP NAVIGATION
+        ========================== */}
 
-        <nav
-          className={`navbar-links ${
-            menuOpen ? "navbar-links-open" : ""
-          }`}
-        >
+        <nav className="navbar-links">
 
           <Link
             to="/"
@@ -51,6 +53,7 @@ function Navbar() {
             HOME
           </Link>
 
+
           <Link
             to="/about"
             onClick={closeMenu}
@@ -58,17 +61,17 @@ function Navbar() {
             ABOUT
           </Link>
 
-          {/* Gallery Dropdown */}
+
+          {/* Gallery */}
+
           <div className="navbar-dropdown">
 
             <button
               type="button"
               className="navbar-dropdown-button"
-              onClick={() =>
-                setGalleryOpen(!galleryOpen)
-              }
+              onClick={toggleGallery}
             >
-              GALLERY
+              <span>GALLERY</span>
 
               <span
                 className={
@@ -83,32 +86,27 @@ function Navbar() {
 
 
             {galleryOpen && (
-
               <div className="navbar-dropdown-menu">
 
                 <Link
                   to="/gallery"
-                  onClick={() =>
-                    setGalleryOpen(false)
-                  }
+                  onClick={closeMenu}
                 >
                   PHOTOS
                 </Link>
 
                 <Link
                   to="/more-works"
-                  onClick={() =>
-                    setGalleryOpen(false)
-                  }
+                  onClick={closeMenu}
                 >
                   MORE WORKS
                 </Link>
 
               </div>
-
             )}
 
           </div>
+
 
           <Link
             to="/contact"
@@ -120,18 +118,9 @@ function Navbar() {
         </nav>
 
 
-        {/* RSVP
-
-        <Link
-          to="/contact"
-          className="navbar-rsvp"
-          onClick={closeMenu}
-        >
-          RSVP
-        </Link> */}
-
-
-        {/* Mobile Menu Button */}
+        {/* =========================
+            MOBILE BUTTON
+        ========================== */}
 
         <button
           type="button"
@@ -142,12 +131,100 @@ function Navbar() {
               : "Open menu"
           }
           aria-expanded={menuOpen}
-          onClick={() => setMenuOpen(!menuOpen)}
+          onClick={toggleMenu}
         >
           {menuOpen ? "×" : "☰"}
         </button>
 
       </div>
+
+
+      {/* =================================================
+          MOBILE MENU
+      ================================================= */}
+
+      {menuOpen && (
+
+        <div className="navbar-mobile-menu">
+
+          <Link
+            to="/"
+            onClick={closeMenu}
+          >
+            HOME
+          </Link>
+
+
+          <Link
+            to="/about"
+            onClick={closeMenu}
+          >
+            ABOUT
+          </Link>
+
+
+          {/* =========================
+              MOBILE GALLERY
+          ========================== */}
+
+          <div className="mobile-gallery">
+
+            <button
+              type="button"
+              className="mobile-gallery-button"
+              onClick={toggleGallery}
+            >
+
+              <span>GALLERY</span>
+
+              <span
+                className={
+                  galleryOpen
+                    ? "mobile-dropdown-arrow open"
+                    : "mobile-dropdown-arrow"
+                }
+              >
+                ▾
+              </span>
+
+            </button>
+
+
+            {galleryOpen && (
+
+              <div className="mobile-gallery-links">
+
+                <Link
+                  to="/gallery"
+                  onClick={closeMenu}
+                >
+                  PHOTOS
+                </Link>
+
+                <Link
+                  to="/more-works"
+                  onClick={closeMenu}
+                >
+                  MORE WORKS
+                </Link>
+
+              </div>
+
+            )}
+
+          </div>
+
+
+          <Link
+            to="/contact"
+            onClick={closeMenu}
+          >
+            CONTACT
+          </Link>
+
+        </div>
+
+      )}
 
     </header>
   );

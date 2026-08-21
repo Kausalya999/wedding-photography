@@ -1,33 +1,44 @@
 /* =========================================
    NAVBAR
 ========================================= */
+
 .navbar {
   position: fixed;
   top: 0;
   left: 0;
+
   width: 100%;
+
   z-index: 1000;
 
   color: #3d342c;
 }
 
+
+/* =========================================
+   CONTAINER
+========================================= */
+
 .navbar-container {
   width: min(1200px, calc(100% - 60px));
+
   min-height: 90px;
 
   margin: 0 auto;
 
   display: flex;
+
   align-items: center;
+
   justify-content: space-between;
 }
+
 
 /* =========================================
    LOGO
 ========================================= */
 
 .navbar-logo {
-
   display: flex;
 
   flex-direction: column;
@@ -36,11 +47,13 @@
 
   flex-shrink: 0;
 
+  text-decoration: none;
+
+  color: inherit;
 }
 
 
 .navbar-logo-main {
-
   font-family: var(--font-display);
 
   font-size: 32px;
@@ -50,29 +63,14 @@
   line-height: 1;
 
   letter-spacing: 0.08em;
-
-}
-
-
-.navbar-logo-sub {
-
-  font-family: var(--font-body);
-
-  font-size: 11px;
-
-  letter-spacing: 0.28em;
-
-  opacity: 0.8;
-
 }
 
 
 /* =========================================
-   DESKTOP LINKS
+   DESKTOP NAVIGATION
 ========================================= */
 
 .navbar-links {
-
   display: flex;
 
   align-items: center;
@@ -82,11 +80,10 @@
   margin-left: auto;
 
   margin-right: 38px;
-
 }
 
 
-.navbar-links a {
+.navbar-links > a {
 
   position: relative;
 
@@ -100,29 +97,29 @@
 
   text-transform: uppercase;
 
+  text-decoration: none;
+
+  color: inherit;
+
   opacity: 0.85;
 
-  transition:
-    opacity 0.3s ease;
-
+  transition: opacity 0.3s ease;
 }
 
 
-.navbar-links a:hover,
-.navbar-links a.active {
-
+.navbar-links > a:hover {
   opacity: 1;
-
 }
 
 
-.navbar-links a::after {
+.navbar-links > a::after {
 
   content: "";
 
   position: absolute;
 
   left: 0;
+
   bottom: 0;
 
   width: 0;
@@ -131,57 +128,133 @@
 
   background: currentColor;
 
-  transition: width 0.35s var(--ease-smooth);
-
+  transition: width 0.35s ease;
 }
 
 
-.navbar-links a:hover::after,
-.navbar-links a.active::after {
-
+.navbar-links > a:hover::after {
   width: 100%;
-
 }
 
 
 /* =========================================
-   RSVP
+   GALLERY DROPDOWN
 ========================================= */
 
-.navbar-rsvp {
+.navbar-dropdown {
+  position: relative;
 
-  display: inline-flex;
+  display: flex;
+
+  align-items: center;
+}
+
+
+.navbar-dropdown-button {
+
+  display: flex;
 
   align-items: center;
 
-  justify-content: center;
+  gap: 6px;
 
-  min-width: 105px;
+  border: none;
 
-  height: 38px;
+  background: transparent;
 
-  border:1px solid rgba(61, 52, 44, 0.5);
+  padding: 8px 0;
+
+  font-family: inherit;
 
   font-size: 14px;
 
   font-weight: 500;
 
-  letter-spacing: 0.2em;
+  letter-spacing: 0.18em;
 
   text-transform: uppercase;
 
-  transition:
-    background 0.35s ease,
-    color 0.35s ease;
+  color: inherit;
 
+  cursor: pointer;
 }
 
 
-.navbar-rsvp:hover {
+.dropdown-arrow {
 
- background: #3d342c;
-color: #fff;
+  display: inline-block;
 
+  font-size: 15px;
+
+  transition: transform 0.3s ease;
+}
+
+
+.dropdown-arrow.open {
+
+  transform: rotate(180deg);
+}
+
+
+/* =========================================
+   DESKTOP GALLERY DROPDOWN
+========================================= */
+
+.navbar-dropdown-menu {
+
+  position: absolute;
+
+  top: calc(100% + 14px);
+
+  left: 50%;
+
+  transform: translateX(-50%);
+
+  min-width: 190px;
+
+  padding: 8px;
+
+  background: #fbf7f4;
+
+  border: 1px solid rgba(63, 44, 48, 0.12);
+
+  box-shadow:
+    0 15px 40px
+    rgba(63, 44, 48, 0.15);
+
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 3px;
+}
+
+
+.navbar-dropdown-menu a {
+
+  display: block;
+
+  padding: 14px 16px;
+
+  text-decoration: none;
+
+  font-size: 10px;
+
+  letter-spacing: 0.15em;
+
+  color: #3f2c30;
+
+  transition:
+    background 0.25s ease,
+    color 0.25s ease;
+}
+
+
+.navbar-dropdown-menu a:hover {
+
+  background: #f1e5e1;
+
+  color: #9a6d76;
 }
 
 
@@ -199,479 +272,116 @@ color: #fff;
 
   padding: 0;
 
-  border: 0;
-
-  background: transparent;
-
-  color: currentColor;
-
-  cursor: pointer;
-
-}
-
-
-.navbar-menu-button svg {
-
-  width: 23px;
-
-  height: 23px;
-
-}
-
-
-/* =========================================
-   MOBILE NAVIGATION
-========================================= */
-
-.navbar-mobile {
-
-  display: none;
-
-}
-
-
-/* =========================================
-   TABLET
-========================================= */
-
-@media (max-width: 991px) {
-
-  .navbar-links,
-  .navbar-rsvp {
-
-    display: none;
-
-  }
-
-
-  .navbar-menu-button {
-
-    display: flex;
-
-    align-items: center;
-
-    justify-content: center;
-
-  }
-
-
-  .navbar-container {
-
-    min-height: 76px;
-
-  }
-
-
-  .navbar-mobile {
-
-    display: block;
-
-    position: absolute;
-
-    top: 100%;
-
-    left: 0;
-
-    width: 100%;
-
-    padding: 0 20px;
-
-    background: rgba(29, 27, 24, 0.97);
-
-    backdrop-filter: blur(15px);
-
-    -webkit-backdrop-filter: blur(15px);
-
-    max-height: 0;
-
-    overflow: hidden;
-
-    opacity: 0;
-
-    transition:
-      max-height 0.5s var(--ease-smooth),
-      opacity 0.35s ease;
-
-  }
-
-
-  .navbar-open .navbar-mobile {
-
-    max-height: 500px;
-
-    opacity: 1;
-
-  }
-
-
-  .navbar-mobile nav {
-
-    display: flex;
-
-    flex-direction: column;
-
-    align-items: center;
-
-    padding: 25px 0 35px;
-
-  }
-
-
-  .navbar-mobile nav a {
-
-    width: 100%;
-
-    padding: 15px;
-
-    text-align: center;
-
-    font-size: 11px;
-
-    letter-spacing: 0.2em;
-
-    text-transform: uppercase;
-
-  }
-
-
-  .navbar-mobile-rsvp {
-
-    margin-top: 12px;
-
-    border: 1px solid rgba(255, 255, 255, 0.5);
-
-  }
-
-}
-
-
-/* =========================================
-   SMALL MOBILE
-========================================= */
-
-@media (max-width: 374px) {
-
-  .navbar-container {
-
-    min-height: 68px;
-
-  }
-
-
-  .navbar-logo-main {
-
-    font-size: 20px;
-
-  }
-
-
-  .navbar-logo-sub {
-
-    font-size: 6px;
-
-  }
-
-}
-
-@media (max-width: 768px) {
-
-  .navbar-container {
-    position: relative;
-  }
-
-  .navbar-menu-button {
-    display: flex;
-
-    align-items: center;
-    justify-content: center;
-
-    width: 42px;
-    height: 42px;
-
-    border: none;
-
-    background: transparent;
-
-    color: inherit;
-
-    font-size: 26px;
-
-    cursor: pointer;
-
-    z-index: 1001;
-  }
-
-
-  .navbar-links {
-    position: absolute;
-
-    top: calc(100% + 10px);
-    left: 16px;
-    right: 16px;
-
-    display: flex;
-
-    flex-direction: column;
-
-    align-items: center;
-
-    gap: 24px;
-
-    padding: 28px 20px;
-
-    background: rgba(255, 250, 248, 0.97);
-
-    backdrop-filter: blur(15px);
-
-    -webkit-backdrop-filter: blur(15px);
-
-    border-radius: 4px;
-
-    box-shadow:
-      0 15px 40px rgba(0, 0, 0, 0.12);
-
-    opacity: 0;
-
-    visibility: hidden;
-
-    transform: translateY(-10px);
-
-    pointer-events: none;
-
-    transition:
-      opacity 0.3s ease,
-      transform 0.3s ease,
-      visibility 0.3s ease;
-
-    z-index: 1000;
-  }
-
-
-  .navbar-links.navbar-links-open {
-    opacity: 1;
-
-    visibility: visible;
-
-    transform: translateY(0);
-
-    pointer-events: auto;
-  }
-
-
-  .navbar-links a {
-    font-size: 12px;
-
-    letter-spacing: 2px;
-
-    text-decoration: none;
-  }
-
-
-  .navbar-rsvp {
-    display: none;
-  }
-
-}
-/* =================================
-   GALLERY DROPDOWN
-================================= */
-
-.navbar-dropdown {
-  position: relative;
-
-  display: flex;
-  align-items: center;
-}
-
-
-.navbar-dropdown-button {
-  display: flex;
-  align-items: center;
-  gap: 6px;
-
   border: none;
+
   background: transparent;
-
-  padding: 0;
-
-  font-family: inherit;
-  font-size: 14px;
 
   color: inherit;
 
+  font-size: 26px;
+
   cursor: pointer;
+
+  align-items: center;
+
+  justify-content: center;
 }
 
 
-.dropdown-arrow {
-  display: inline-block;
-
-  font-size: 16px;
-
-  transition:
-    transform 0.3s ease;
-}
-
-
-.dropdown-arrow.open {
-  transform: rotate(180deg);
-}
-
-
-/* =================================
-   DROPDOWN MENU
-================================= */
-
-.navbar-dropdown-menu {
-  position: absolute;
-
-  top: calc(100% + 18px);
-
-  left: 50%;
-
-  transform: translateX(-50%);
-
-  min-width: 190px;
-
-  padding: 10px;
-
-  background: #fbf7f4;
-
-  border: 1px solid
-    rgba(63, 44, 48, 0.12);
-
-  box-shadow:
-    0 15px 40px
-    rgba(63, 44, 48, 0.12);
-
-  z-index: 1000;
-
-  display: flex;
-  flex-direction: column;
-
-  gap: 4px;
-}
-
-
-.navbar-dropdown-menu a {
-  display: block;
-
-  padding: 13px 16px;
-
-  text-decoration: none;
-
-  font-size: 10px;
-
-  letter-spacing: 0.15em;
-
-  color: #3f2c30;
-
-  transition:
-    background 0.25s ease,
-    color 0.25s ease;
-}
-
-
-.navbar-dropdown-menu a:hover {
-  background: #f1e5e1;
-
-  color: #9a6d76;
-}
-/* =================================
+/* =========================================
    MOBILE MENU
-================================= */
+========================================= */
 
 .navbar-mobile-menu {
+
   display: none;
 }
 
 
-/* =================================
-   MOBILE
-================================= */
+/* =========================================
+   TABLET / MOBILE
+========================================= */
 
 @media (max-width: 768px) {
 
-  .navbar-links,
-  .navbar-rsvp {
+  .navbar-container {
+
+    width: calc(100% - 32px);
+
+    min-height: 76px;
+  }
+
+
+  /* Hide desktop navigation */
+
+  .navbar-links {
     display: none;
   }
 
 
+  /* Show hamburger */
+
   .navbar-menu-button {
+
     display: flex;
-
-    align-items: center;
-    justify-content: center;
-
-    width: 42px;
-    height: 42px;
-
-    border: none;
-
-    background: transparent;
 
     color: #3f2c30;
 
-    font-size: 22px;
-
-    cursor: pointer;
+    z-index: 1100;
   }
 
 
+  /* Mobile menu */
+
   .navbar-mobile-menu {
+
     display: flex;
 
     flex-direction: column;
 
-    gap: 0;
-
     width: 100%;
 
-    padding:
-      20px
-      24px
-      30px;
+    padding: 18px 24px 28px;
 
-    background: #fbf7f4;
+    background: rgba(251, 247, 244, 0.98);
 
-    border-top:
-      1px solid
-      rgba(63, 44, 48, 0.08);
+    backdrop-filter: blur(18px);
+
+    -webkit-backdrop-filter: blur(18px);
+
+    border-top: 1px solid rgba(63, 44, 48, 0.08);
 
     box-shadow:
-      0 15px 30px
-      rgba(63, 44, 48, 0.08);
+      0 15px 35px
+      rgba(63, 44, 48, 0.12);
+
+    animation: mobileMenuOpen 0.3s ease;
   }
 
 
-  .navbar-mobile-menu > a,
-  .mobile-gallery-button {
+  /* Mobile normal links */
+
+  .navbar-mobile-menu > a {
+
+    display: block;
+
     width: 100%;
 
     padding: 17px 0;
 
-    border: none;
-
-    background: transparent;
-
-    text-align: left;
+    border-bottom:
+      1px solid
+      rgba(63, 44, 48, 0.08);
 
     text-decoration: none;
 
-    font-family: inherit;
-
     font-size: 11px;
+
+    font-weight: 500;
 
     letter-spacing: 0.2em;
 
     color: #3f2c30;
-
-    cursor: pointer;
-
-    border-bottom:
-      1px solid
-      rgba(63, 44, 48, 0.08);
   }
 
 
@@ -680,61 +390,189 @@ color: #fff;
   ================================= */
 
   .mobile-gallery {
+
     width: 100%;
   }
 
 
   .mobile-gallery-button {
+
+    width: 100%;
+
     display: flex;
 
     align-items: center;
 
     justify-content: space-between;
+
+    padding: 17px 0;
+
+    border: none;
+
+    border-bottom:
+      1px solid
+      rgba(63, 44, 48, 0.08);
+
+    background: transparent;
+
+    font-family: inherit;
+
+    font-size: 11px;
+
+    font-weight: 500;
+
+    letter-spacing: 0.2em;
+
+    color: #3f2c30;
+
+    cursor: pointer;
+
+    text-align: left;
   }
 
 
+  .mobile-dropdown-arrow {
+
+    font-size: 16px;
+
+    transition:
+      transform 0.3s ease;
+  }
+
+
+  .mobile-dropdown-arrow.open {
+
+    transform: rotate(180deg);
+  }
+
+
+  /* =================================
+     MOBILE GALLERY SUBMENU
+  ================================= */
+
   .mobile-gallery-links {
+
     display: flex;
 
     flex-direction: column;
 
     padding-left: 18px;
+
+    background: rgba(245, 237, 233, 0.6);
   }
 
 
   .mobile-gallery-links a {
-    padding:
-      14px
-      0;
+
+    display: block;
+
+    padding: 15px 0;
+
+    border-bottom:
+      1px solid
+      rgba(63, 44, 48, 0.06);
 
     text-decoration: none;
 
     font-size: 10px;
 
-    letter-spacing: 0.15em;
+    letter-spacing: 0.16em;
 
     color: #756064;
 
-    border-bottom:
-      1px solid
-      rgba(63, 44, 48, 0.05);
+    transition:
+      color 0.25s ease,
+      padding-left 0.25s ease;
   }
 
 
-  /* =================================
-     MOBILE RSVP
-  ================================= */
+  .mobile-gallery-links a:hover {
 
-  .navbar-mobile-menu .mobile-rsvp {
-    margin-top: 18px;
+    color: #9a6d76;
 
-    padding: 14px 20px;
+    padding-left: 5px;
+  }
+}
 
-    text-align: center;
 
-    border: 1px solid #3f2c30;
+/* =========================================
+   SMALL MOBILE
+========================================= */
 
-    color: #3f2c30;
+@media (max-width: 480px) {
+
+  .navbar-container {
+
+    width: calc(100% - 24px);
+
+    min-height: 70px;
   }
 
+
+  .navbar-logo-main {
+
+    font-size: 24px;
+
+    letter-spacing: 0.05em;
+  }
+
+
+  .navbar-menu-button {
+
+    width: 40px;
+
+    height: 40px;
+
+    font-size: 24px;
+  }
+
+
+  .navbar-mobile-menu {
+
+    padding-left: 20px;
+
+    padding-right: 20px;
+  }
+}
+
+
+/* =========================================
+   VERY SMALL MOBILE
+========================================= */
+
+@media (max-width: 374px) {
+
+  .navbar-logo-main {
+
+    font-size: 21px;
+  }
+
+
+  .navbar-mobile-menu > a,
+  .mobile-gallery-button {
+
+    font-size: 10px;
+  }
+}
+
+
+/* =========================================
+   ANIMATION
+========================================= */
+
+@keyframes mobileMenuOpen {
+
+  from {
+
+    opacity: 0;
+
+    transform: translateY(-8px);
+  }
+
+  to {
+
+    opacity: 1;
+
+    transform: translateY(0);
+  }
 }
