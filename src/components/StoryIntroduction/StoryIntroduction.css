@@ -4,7 +4,7 @@
   background: #fbf7f4;
 
   padding:
-    clamp(27px, 5vw, 110px)
+    clamp(27px, 0vw, 110px)
     24px
     clamp(90px, 10vw, 150px);
 
