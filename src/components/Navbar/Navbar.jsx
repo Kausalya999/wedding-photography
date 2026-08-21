@@ -4,11 +4,12 @@ import { Link } from "react-router-dom";
 import "./Navbar.css";
 
 function Navbar() {
-
+  const [galleryOpen, setGalleryOpen] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
 
   const closeMenu = () => {
     setMenuOpen(false);
+    setGalleryOpen(false);
   };
 
   return (
@@ -25,12 +26,12 @@ function Navbar() {
         >
 
           <span className="navbar-logo-main">
-            ARK
+            ARK Studio
           </span>
 
-          <span className="navbar-logo-sub">
+          {/* <span className="navbar-logo-sub">
             Studio
-          </span>
+          </span> */}
 
         </Link>
 
@@ -57,12 +58,57 @@ function Navbar() {
             ABOUT
           </Link>
 
-          <Link
-            to="/gallery"
-            onClick={closeMenu}
-          >
-            GALLERY
-          </Link>
+          {/* Gallery Dropdown */}
+          <div className="navbar-dropdown">
+
+            <button
+              type="button"
+              className="navbar-dropdown-button"
+              onClick={() =>
+                setGalleryOpen(!galleryOpen)
+              }
+            >
+              GALLERY
+
+              <span
+                className={
+                  galleryOpen
+                    ? "dropdown-arrow open"
+                    : "dropdown-arrow"
+                }
+              >
+                ▾
+              </span>
+            </button>
+
+
+            {galleryOpen && (
+
+              <div className="navbar-dropdown-menu">
+
+                <Link
+                  to="/gallery"
+                  onClick={() =>
+                    setGalleryOpen(false)
+                  }
+                >
+                  PHOTOS
+                </Link>
+
+                <Link
+                  to="/more-works"
+                  onClick={() =>
+                    setGalleryOpen(false)
+                  }
+                >
+                  MORE WORKS
+                </Link>
+
+              </div>
+
+            )}
+
+          </div>
 
           <Link
             to="/contact"
@@ -74,7 +120,7 @@ function Navbar() {
         </nav>
 
 
-        {/* RSVP */}
+        {/* RSVP
 
         <Link
           to="/contact"
@@ -82,7 +128,7 @@ function Navbar() {
           onClick={closeMenu}
         >
           RSVP
-        </Link>
+        </Link> */}
 
 
         {/* Mobile Menu Button */}

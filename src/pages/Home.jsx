@@ -7,6 +7,7 @@ import Testimonials from "../components/Testimonials/Testimonials";
 import EnquiryCTA from "../components/EnquiryCTA/EnquiryCTA";
 import RSVP from "../components/RSVP/RSVP";
 import Footer from "../components/Footer/Footer";
+import MoreWorks from "../components/MoreWorks/MoreWorks";
 function Home() {
   return (
     <>
@@ -18,7 +19,8 @@ function Home() {
         <StoryIntroduction />
         <FeaturedGallery />
         <Testimonials />
-        <EnquiryCTA />
+        {/* <EnquiryCTA /> */}
+        {/* <MoreWorks/> */}
         <RSVP/>
         <Footer />
       </main>

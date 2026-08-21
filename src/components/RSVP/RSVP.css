@@ -1,7 +1,7 @@
 .rsvp {
   width: 100%;
 
-  padding: clamp(90px, 10vw, 150px) 24px;
+  padding: clamp(90px, 5vw, 150px) 24px;
 
   background: #fbf7f4;
 

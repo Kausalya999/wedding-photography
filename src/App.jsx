@@ -9,6 +9,8 @@ import Contact from "./pages/Contact";
 import Gallery from "./pages/Gallery";
 import StoryIntroduction from "./components/StoryIntroduction/StoryIntroduction";
 import FeaturedGallery from "./components/FeaturedGallery/FeaturedGallery";
+import RSVP from "./components/RSVP/RSVP";
+import MoreWorks from "./components/MoreWorks/MoreWorks";
 function App() {
   return (
     <BrowserRouter basename={import.meta.env.BASE_URL}>
@@ -38,7 +40,7 @@ function App() {
 
         <Route
           path="/contact"
-          element={<Contact />}
+          element={<RSVP />}
         />
         <Route
           path="/gallery"
@@ -49,7 +51,9 @@ function App() {
           path="/images"
           element={<Gallery />}
 />
-
+      <Route path="/more-works"
+      element={<MoreWorks/>} />
+      
       </Routes>
     </BrowserRouter>
   );

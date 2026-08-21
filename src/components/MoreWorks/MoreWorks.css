@@ -1,0 +1,503 @@
+/* =================================
+   MORE WORKS PAGE
+================================= */
+
+.more-works {
+  width: 100%;
+  min-height: 100vh;
+
+  background: #fbf7f4;
+  color: #3f2c30;
+
+  overflow: hidden;
+}
+
+
+/* =================================
+   HERO
+================================= */
+
+.more-works-hero {
+  min-height: 65vh;
+
+  padding:
+    60px
+    24px
+    90px;
+
+  display: flex;
+  flex-direction: column;
+
+  align-items: center;
+  justify-content: center;
+
+  text-align: center;
+}
+
+
+/* Small label */
+
+.more-works-hero > span {
+  display: inline-block;
+
+  margin-bottom: 28px;
+
+  font-size: 0.65rem;
+
+  letter-spacing: 0.3em;
+
+  color: #9a6d76;
+
+  font-weight: 500;
+}
+
+
+/* Main heading */
+
+.more-works-hero h1 {
+  margin: 0;
+
+  max-width: 1000px;
+
+  font-family:
+    Georgia,
+    "Times New Roman",
+    serif;
+
+  font-size:
+    clamp(3rem, 7vw, 7rem);
+
+  font-weight: 400;
+
+  line-height: 0.95;
+
+  letter-spacing: -0.04em;
+}
+
+
+.more-works-hero h1 em {
+  font-style: italic;
+
+  font-weight: 400;
+}
+
+
+/* Description */
+
+.more-works-hero p {
+  margin: 38px 0 0;
+
+  max-width: 600px;
+
+  font-size:
+    clamp(0.9rem, 1.2vw, 1.05rem);
+
+  line-height: 1.8;
+
+  letter-spacing: 0.02em;
+
+  color: #756064;
+}
+
+
+/* =================================
+   TABLET
+================================= */
+
+@media (max-width: 768px) {
+
+  .more-works-hero {
+    min-height: 60vh;
+
+    padding:
+      120px
+      24px
+      70px;
+  }
+
+
+  .more-works-hero > span {
+    margin-bottom: 24px;
+
+    font-size: 0.6rem;
+
+    letter-spacing: 0.22em;
+  }
+
+
+  .more-works-hero h1 {
+    font-size:
+      clamp(2.8rem, 10vw, 5rem);
+
+    line-height: 0.98;
+  }
+
+
+  .more-works-hero p {
+    margin-top: 30px;
+
+    line-height: 1.75;
+  }
+
+}
+
+
+/* =================================
+   MOBILE
+================================= */
+
+@media (max-width: 480px) {
+
+  .more-works-hero {
+    min-height: 58vh;
+
+    padding:
+      100px
+      20px
+      60px;
+  }
+
+
+  .more-works-hero > span {
+    margin-bottom: 20px;
+
+    font-size: 0.55rem;
+
+    letter-spacing: 0.16em;
+  }
+
+
+  .more-works-hero h1 {
+    font-size:
+      clamp(2.5rem, 12vw, 4rem);
+
+    line-height: 0.96;
+
+    letter-spacing: -0.03em;
+  }
+
+
+  .more-works-hero p {
+    margin-top: 26px;
+
+    font-size: 0.88rem;
+
+    line-height: 1.7;
+  }
+
+}
+/* =================================
+   VIDEO GALLERY
+================================= */
+
+.video-gallery {
+  width: min(1400px, calc(100% - 48px));
+
+  margin: 0 auto;
+
+  padding:
+    47px
+    0
+    140px;
+}
+
+
+/* =================================
+   HEADING
+================================= */
+
+.video-gallery-heading {
+  text-align: center;
+
+  margin-bottom: 70px;
+}
+
+
+.video-gallery-heading span {
+  display: inline-block;
+
+  margin-bottom: 24px;
+
+  font-size: 0.65rem;
+
+  letter-spacing: 0.3em;
+
+  color: #9a6d76;
+}
+
+
+.video-gallery-heading h2 {
+  margin: 0;
+
+  font-family:
+    Georgia,
+    "Times New Roman",
+    serif;
+
+  font-size:
+    clamp(3rem, 6vw, 6rem);
+
+  font-weight: 400;
+
+  line-height: 0.95;
+
+  letter-spacing: -0.04em;
+
+  color: #3f2c30;
+}
+
+
+.video-gallery-heading h2 em {
+  font-style: italic;
+}
+
+
+/* =================================
+   VIDEO GRID
+================================= */
+
+.video-grid {
+  display: grid;
+
+  grid-template-columns:
+    repeat(2, minmax(0, 1fr));
+
+  gap: 70px 30px;
+}
+
+
+/* =================================
+   VIDEO CARD
+================================= */
+
+.video-card {
+  width: 100%;
+}
+
+
+/* =================================
+   VIDEO WRAPPER
+================================= */
+
+.video-wrapper {
+  position: relative;
+
+  width: 100%;
+
+  aspect-ratio: 16 / 9;
+
+  overflow: hidden;
+
+  background: #e9ded8;
+}
+
+
+.video-wrapper iframe {
+  position: absolute;
+
+  inset: 0;
+
+  width: 100%;
+  height: 100%;
+
+  border: 0;
+}
+
+
+/* =================================
+   VIDEO INFORMATION
+================================= */
+
+.video-info {
+  padding-top: 20px;
+}
+
+
+.video-info span {
+  display: block;
+
+  margin-bottom: 8px;
+
+  font-size: 0.6rem;
+
+  letter-spacing: 0.25em;
+
+  color: #9a6d76;
+}
+
+
+.video-info h3 {
+  margin: 0;
+
+  font-family:
+    Georgia,
+    "Times New Roman",
+    serif;
+
+  font-size:
+    clamp(1.5rem, 2.5vw, 2.2rem);
+
+  font-weight: 400;
+
+  color: #3f2c30;
+}
+
+
+/* =================================
+   BOTTOM SECTION
+================================= */
+
+.more-works-bottom {
+  padding:
+    0px
+    24px
+    160px;
+
+  text-align: center;
+}
+
+
+.more-works-bottom span {
+  font-size: 0.6rem;
+
+  letter-spacing: 0.3em;
+
+  color: #9a6d76;
+}
+
+
+.more-works-bottom h2 {
+  margin: 25px 0 0;
+
+  font-family:
+    Georgia,
+    "Times New Roman",
+    serif;
+
+  font-size:
+    clamp(3.5rem, 7vw, 7rem);
+
+  font-weight: 400;
+
+  line-height: 0.95;
+
+  color: #3f2c30;
+}
+
+
+.more-works-bottom h2 em {
+  font-style: italic;
+}
+
+
+/* =================================
+   TABLET
+================================= */
+
+@media (max-width: 768px) {
+
+  .video-gallery {
+    width: min(
+      100% - 32px,
+      700px
+    );
+
+    padding:
+      60px
+      0
+      100px;
+  }
+
+
+  .video-gallery-heading {
+    margin-bottom: 50px;
+  }
+
+
+  .video-grid {
+    grid-template-columns: 1fr;
+
+    gap: 55px;
+  }
+
+
+  .video-info {
+    padding-top: 16px;
+  }
+
+}
+
+
+/* =================================
+   MOBILE
+================================= */
+
+@media (max-width: 480px) {
+
+  .video-gallery {
+    width: calc(100% - 24px);
+
+    padding:
+      45px
+      0
+      80px;
+  }
+
+
+  .video-gallery-heading {
+    margin-bottom: 40px;
+  }
+
+
+  .video-gallery-heading span {
+    font-size: 0.55rem;
+
+    letter-spacing: 0.18em;
+  }
+
+
+  .video-gallery-heading h2 {
+    font-size:
+      clamp(2.7rem, 12vw, 4rem);
+
+    line-height: 0.96;
+  }
+
+
+  .video-grid {
+    gap: 45px;
+  }
+
+
+  .video-info span {
+    font-size: 0.5rem;
+
+    letter-spacing: 0.18em;
+  }
+
+
+  .video-info h3 {
+    font-size: 1.45rem;
+  }
+
+
+  .more-works-bottom {
+    padding:
+      0px
+      20px
+      110px;
+  }
+
+
+  .more-works-bottom span {
+    font-size: 0.5rem;
+
+    letter-spacing: 0.2em;
+  }
+
+
+  .more-works-bottom h2 {
+    font-size: 3.5rem;
+  }
+
+}

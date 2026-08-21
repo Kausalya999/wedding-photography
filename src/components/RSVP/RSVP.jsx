@@ -3,7 +3,7 @@ import "./RSVP.css";
 
 function RSVP() {
   return (
-    <section className="rsvp" id="rsvp">
+    <section className="rsvp" id="contact">
 
       <div className="rsvp-header">
 

@@ -38,7 +38,7 @@ function Footer() {
           <a href="#about">ABOUT</a>
           <a href="#gallery">GALLERY</a>
           <a href="#contact">CONTACT</a>
-          <a href="#contact">RSVP</a>
+          {/* <a href="#contact">RSVP</a> */}
         </motion.nav>
 
 
