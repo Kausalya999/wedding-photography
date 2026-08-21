@@ -1,7 +1,7 @@
 .rsvp {
   width: 100%;
 
-  padding: clamp(90px, 5vw, 150px) 24px;
+  padding: clamp(22px, 3vw, 150px) 24px;
 
   background: #fbf7f4;
 
@@ -223,7 +223,7 @@
 @media (max-width: 768px) {
 
   .rsvp {
-    padding: 90px 20px;
+    padding: 42px 20px;
   }
 
   .rsvp-header {
@@ -250,7 +250,7 @@
 @media (max-width: 600px) {
 
   .rsvp {
-    padding: 80px 18px;
+    padding: 42px  18px;
   }
 
   .rsvp-label {

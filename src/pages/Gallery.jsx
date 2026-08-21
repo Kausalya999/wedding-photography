@@ -6,6 +6,7 @@ import gallery1 from "../assets/images/gallery1.png";
 import gallery2 from "../assets/images/gallery2.png";
 
 import "../components/Gallery/Gallery.css";
+import BackToHome from "../components/BackToHome/BackToHome";
 
 const galleryImages = [
   {
@@ -118,6 +119,7 @@ function Gallery() {
       {/* Hero */}
       <section className="gallery-hero"
       id="images">
+         <BackToHome />
 
         <motion.span
           className="gallery-hero-label"

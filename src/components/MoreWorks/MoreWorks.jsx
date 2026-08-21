@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import "./MoreWorks.css";
-
+import BackToHome from "../BackToHome/BackToHome";
 const videos = [
   {
     id: 1,
@@ -72,6 +72,7 @@ function MoreWorks() {
       ================================= */}
 
       <section className="video-gallery">
+         <BackToHome />
 
         <div className="video-gallery-heading">
 

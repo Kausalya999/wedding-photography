@@ -1,10 +1,10 @@
 import { motion } from "framer-motion";
 import "./RSVP.css";
-
+import BackToHome from "../BackToHome/BackToHome";
 function RSVP() {
   return (
     <section className="rsvp" id="contact">
-
+     <BackToHome />
       <div className="rsvp-header">
 
         <motion.span

@@ -2,14 +2,14 @@ import { motion } from "framer-motion";
 import "./StoryIntroduction.css";
 
 import clientImage from "../../assets/images/groom.png";
-
+import BackToHome from "../BackToHome/BackToHome";
 function StoryIntroduction() {
   return (
     <section
       className="story-introduction"
       id="about"
     >
-
+     <BackToHome />
       {/* =========================
           INTRODUCTION
       ========================= */}

@@ -2,13 +2,13 @@ import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import gallery1 from "../../assets/images/gallery1.png";
 import gallery2 from "../../assets/images/gallery2.png";
-
+import BackToHome from "../BackToHome/BackToHome";
 import "./FeaturedGallery.css";
 
 function FeaturedGallery() {
   return (
     <section className="featured-gallery" id="gallery">
-
+      <BackToHome />
       {/* Header */}
       <div className="featured-gallery-header">
 
